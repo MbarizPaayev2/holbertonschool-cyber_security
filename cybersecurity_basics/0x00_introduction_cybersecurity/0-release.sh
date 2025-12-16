@@ -1,2 +1,1 @@
-#!/bin/bash 
-uname 
+lsb_release
