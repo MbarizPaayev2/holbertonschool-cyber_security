@@ -1,2 +1,2 @@
 #!/bin/bash
-sudo ss -atp
+sudo ss -atpn
