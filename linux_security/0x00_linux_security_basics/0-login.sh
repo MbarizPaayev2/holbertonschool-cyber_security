@@ -1,2 +1,2 @@
 #!/bin/bash
-sudo last -F root  
+sudo last -F -5 root  
