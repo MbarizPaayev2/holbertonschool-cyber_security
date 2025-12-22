@@ -1,2 +1,2 @@
 #!/bin/bash
-whois "$1" | awk '/^Registrant/ || /^Admin/ || /^Tech/ {gsub(/^ +| +$/,""); gsub(/:$/,":"); gsub(/: +/,", "); print}' > "$1.csv"
+whois "$1" | awk 'BEGIN{s=""} /Registrant:/{s="Registrant"} /Administrative Contact:/||/Admin Contact:/{s="Admin"} /Technical Contact:/||/Tech Contact:/{s="Tech"} s&&/^[[:space:]]*[^:]+:/{gsub(/^[[:space:]]*/,"");gsub(/[[:space:]]*$/,"");split($0,a,":");f=a[1];v=substr($0,length(f)+2);gsub(/^[[:space:]]*/,"",v);gsub(/[[:space:]]*$/,"",v);if(f~/Street/)v=v" ";if(f~/Ext/)print s" "f":,";else print s" "f","v}' > "${1}.csv"
