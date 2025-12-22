@@ -1,2 +1,2 @@
 #!/bin/bash
-sudo ufw enable ssh
+sudo ufw allow ssh
