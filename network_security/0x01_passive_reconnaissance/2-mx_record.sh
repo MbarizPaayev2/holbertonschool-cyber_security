@@ -1,2 +1,2 @@
 #!/bin/bash 
-nslookup -MX $1
+nslookup  $1
