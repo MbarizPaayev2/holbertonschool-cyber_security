@@ -1,2 +1,2 @@
 #!/bin/bash
-echo "80" > 0-ports.txt\n
+echo "80" > 0-ports.txt
