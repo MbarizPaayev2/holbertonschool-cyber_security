@@ -1,1 +1,1 @@
-icmp && icmp.code = 3 && icmp.code = 2
+icmp && icmp.code = 3 && icmp.code = 2 && ip.proto == 1
