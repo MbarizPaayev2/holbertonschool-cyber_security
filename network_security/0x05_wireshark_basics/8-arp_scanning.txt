@@ -1,0 +1,2 @@
+arp.opcode == 1 or arp.opcode == 2
+
