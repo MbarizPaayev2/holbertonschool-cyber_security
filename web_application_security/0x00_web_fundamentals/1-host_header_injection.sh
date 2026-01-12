@@ -1,2 +1,2 @@
 #!/bin/bash
-curl -H $1 $2 $3 
+curl -X $1 $2 -H $3 
