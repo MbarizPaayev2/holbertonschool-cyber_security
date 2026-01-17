@@ -1,4 +1,4 @@
 GET /ticket?id=1 HTTP/1.1
-Host: 10.42.234.228
+Host: web0x00.hbtn
 Cookie: session=.eJxFyjsKgDAQBcC7vDpIbFMpHsETJLhiID92E1TEu2sjtsNcGJfok8CsNggpTE1qjsSvVG4vzK2UzPUfFK0PMDizsB92cvrQuttcTVDwC0yv0IQ42Uhfw_0AkYMj6g.aWtVUw.t0uzzGzsdTFOBp5gl6rrxaQnVPk
 Connection: close
