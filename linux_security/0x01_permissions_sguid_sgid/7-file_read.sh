@@ -1,2 +1,2 @@
 #!/bin/bash 
-chmod o+r $1
+find  $1 -exec -type f chmod o=r
