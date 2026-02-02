@@ -1,2 +1,2 @@
 #!/bin/bash
-find / -perm -4000 2>/dev/null | ls -la 
+find / -perm -exec  -4000 2>/dev/null | ls -la 
