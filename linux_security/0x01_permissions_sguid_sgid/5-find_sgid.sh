@@ -1,2 +1,2 @@
 #!/bin/bash
-find / -perm -2000 2>/dev/null
+find $1 -perm -2000 2>/dev/null
