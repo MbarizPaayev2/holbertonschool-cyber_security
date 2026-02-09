@@ -1,2 +1,2 @@
 #!/bin/bash
-sudo semanage login -a -s user_u 
+sudo semanage login -a -s $1 
