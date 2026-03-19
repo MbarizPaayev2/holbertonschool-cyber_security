@@ -1,2 +1,2 @@
 #!/bin/bash
-sudo nmap -sM $1  -p 22,80,443,21,23 -vv 
+sudo nmap -sM $1  -p 21,22,23,80,443  -vv 
