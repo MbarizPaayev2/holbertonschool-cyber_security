@@ -1,2 +1,2 @@
 #!/bin/bash
-grep "Linux version" $1
+grep -E " 4.2.4-1ubuntu3" dmesg
